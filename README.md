@@ -27,4 +27,5 @@ Open `login.html` in your browser.
 - Add authentication system
 
 ## Author
-[Your Name]
+Ronit Kumar
+
