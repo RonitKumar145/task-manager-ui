@@ -1,0 +1,74 @@
+/* Reset default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full screen layout */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+
+    /* Center everything */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container box */
+.container {
+    width: 300px;
+}
+
+/* Form styling */
+.form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+
+    /* subtle shadow */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Heading */
+.form h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Labels */
+.form label {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Input fields */
+.form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+/* Button */
+.form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Button hover */
+.form button:hover {
+    background: #0056b3;
+}
+
+/* Text under form */
+.form p {
+    margin-top: 10px;
+    text-align: center;
+}
