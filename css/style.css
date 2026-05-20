@@ -134,13 +134,25 @@ body{
 /* PIKACHU GIF */
 
 .pikachu{
-    width:180px;
-
-    margin-bottom:30px;
+    width:220px;
+    height:auto;
 
     object-fit:contain;
 
-    animation:float 3s ease-in-out infinite;
+    image-rendering:-webkit-optimize-contrast;
+    image-rendering:crisp-edges;
+
+    transform:translateZ(0);
+
+    backface-visibility:hidden;
+
+    filter:
+    contrast(1.08)
+    saturate(1.15)
+    brightness(1.02)
+    drop-shadow(0 0 12px rgba(255,221,0,0.45));
+
+    
 }
 
 /* BRAND TEXT */
