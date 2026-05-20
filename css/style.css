@@ -1,74 +1,429 @@
-/* Reset default browser spacing */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* Full screen layout */
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
+/* BODY */
 
-    /* Center everything */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+body{
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #334155
+    );
+
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
 }
 
-/* Container box */
-.container {
-    width: 300px;
+/* BACKGROUND GLOW */
+
+.background{
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(59,130,246,0.25),
+        transparent 70%
+    );
+
+    filter:blur(80px);
+
+    z-index:0;
 }
 
-/* Form styling */
-.form {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
+/* MAIN CONTAINER */
+.login-container{
+    width:1200px;
 
-    /* subtle shadow */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    min-height:650px;
+
+    display:flex;
+
+    flex-direction:row;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+
+    background:
+    rgba(255,255,255,0.05);
+
+    border:
+    1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.4);
+
+    z-index:1;
+
+    animation:fadeIn 0.7s ease;
 }
 
-/* Heading */
-.form h2 {
-    text-align: center;
-    margin-bottom: 15px;
+/* GLASS REFLECTION */
+
+.login-container::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,0.08),
+        transparent
+    );
+
+    pointer-events:none;
 }
 
-/* Labels */
-.form label {
-    display: block;
-    margin-top: 10px;
+/* LEFT BRAND SECTION */
+
+.brand-section{
+    width:50%;
+
+    padding:80px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(255,255,255,0.04),
+        rgba(255,255,255,0.01)
+    );
+
+    border-right:
+    1px solid rgba(255,255,255,0.08);
 }
 
-/* Input fields */
-.form input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+/* PIKACHU GIF */
+
+.pikachu{
+    width:180px;
+
+    margin-bottom:30px;
+
+    object-fit:contain;
+
+    animation:float 3s ease-in-out infinite;
 }
 
-/* Button */
-.form button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 15px;
-    background: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
+/* BRAND TEXT */
+
+.brand-section h1{
+    font-size:60px;
+
+    color:white;
+
+    margin-bottom:25px;
+
+    letter-spacing:-2px;
+
+    font-weight:700;
 }
 
-/* Button hover */
-.form button:hover {
-    background: #0056b3;
+.brand-section p{
+    color:#cbd5e1;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    max-width:420px;
 }
 
-/* Text under form */
-.form p {
-    margin-top: 10px;
-    text-align: center;
+/* RIGHT FORM SECTION */
+
+.form-section{
+    width:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+    padding:60px;
+}
+
+/* FORM */
+
+.login-form{
+    width:100%;
+    max-width:400px;
+
+    padding-top:20px;
+}
+
+/* HEADINGS */
+
+.login-form h2{
+    font-size:42px;
+
+    color:white;
+
+    margin-bottom:10px;
+
+    font-weight:700;
+}
+
+.subtitle{
+    color:#94a3b8;
+
+    margin-bottom:35px;
+
+    font-size:15px;
+}
+
+/* INPUT GROUP */
+
+.input-group{
+    margin-bottom:22px;
+}
+
+.input-group label{
+    display:block;
+
+    margin-bottom:10px;
+
+    color:#ffffff;
+
+    font-size:14px;
+
+    font-weight:600;
+}
+
+/* INPUTS */
+
+.input-group input{
+    width:100%;
+
+    padding:16px 18px;
+
+    border-radius:14px;
+
+    border:
+    1px solid rgba(255,255,255,0.12);
+
+    background:
+    rgba(255,255,255,0.12);
+
+    color:#ffffff;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:0.3s;
+}
+
+/* PLACEHOLDER */
+
+.input-group input::placeholder{
+    color:#d1d5db;
+}
+
+/* INPUT HOVER */
+
+.input-group input:hover{
+    border-color:
+    rgba(255,255,255,0.25);
+}
+
+/* INPUT FOCUS */
+
+.input-group input:focus{
+    outline:none;
+
+    border-color:#3b82f6;
+
+    box-shadow:
+    0 0 15px rgba(59,130,246,0.35);
+
+    background:
+    rgba(255,255,255,0.15);
+}
+
+/* OPTIONS */
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:28px;
+
+    font-size:14px;
+}
+
+.options a{
+    text-decoration:none;
+
+    color:#60a5fa;
+}
+
+.remember{
+    color:#cbd5e1;
+}
+
+/* BUTTON */
+
+button{
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    color:white;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    margin-top:10px;
+}
+
+/* BUTTON HOVER */
+
+button:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 10px 20px rgba(37,99,235,0.35);
+}
+
+/* SIGNUP TEXT */
+
+.signup-text{
+    text-align:center;
+
+    margin-top:25px;
+    margin-bottom:20px;
+
+    color:#94a3b8;
+
+    font-size:14px;
+}
+
+.signup-text a{
+    color:#60a5fa;
+
+    text-decoration:none;
+
+    font-weight:600;
+}
+
+.signup-text a:hover{
+    text-decoration:underline;
+}
+
+/* FLOAT ANIMATION */
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* FADE ANIMATION */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .login-container{
+        width:95%;
+        height:auto;
+
+        flex-direction:column;
+    }
+
+    .brand-section,
+    .form-section{
+        width:100%;
+    }
+
+    .brand-section{
+        padding:50px;
+    }
+
+    .brand-section h1{
+        font-size:48px;
+    }
+
+    .form-section{
+        padding:40px;
+    }
+
+    .pikachu{
+        width:180px;
+    }
 }
